@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Broadway Video Surveillance</title>
+    <script type="text/javascript" src="http-live-player.js"></script>
+    <style type="text/css">
+        body {
+            background-color: #02686c;
+        }
+        .nvbar {
+            font-family: sans-serif;
+            height: 30px;
+            display: flex;
+        }
+        .title {
+            font-size: 18px;
+            margin-left: 12px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, .8);
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, .8);
+            line-height: 20px;
+            vertical-align: text-bottom;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+            margin-left: 24px;
+            color: rgba(255, 255, 255, .5);
+            line-height: 20px;
+            vertical-align: text-bottom;
+        }
+        #videos {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #videos canvas {
+            margin: 3px;
+        }
+        canvas {
+            border-radius: 5px;
+            border: 6px solid rgba(0, 0, 0, .5);
+        }
+        canvas:hover {
+            border: 6px solid rgba(163, 163, 163, 0.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="nvbar">
+    <div class="title">基于Broadway+WebSocket的视频监控示例</div>
+</div>
+<div class="videos-wrapper">
+    <div id="videos"></div>
+</div>
+<script type="text/javascript">
+    var videos = document.getElementById( 'videos' );
+    for ( var i = 0; i < 1; i++ ) {
+        var canvas = document.createElement( "canvas" );
+        videos.appendChild( canvas );
+        // var player = new WSAvcPlayer( canvas, "webgl", 'ch1', true );
+        var player = new WSAvcPlayer( canvas, "webgl", 1, 35 );
+        player.connect( "ws://192.168.101.47:9101/camera/play/0001" );
+    }
+</script>
+</body>
+</html>
