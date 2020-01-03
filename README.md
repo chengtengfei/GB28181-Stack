@@ -3,12 +3,12 @@
 #### 1. HTML5播放H264的NALU内容  
 H264PalyerNALU 文件内的示例播放H264分割后的NALU
 
-Reference [h264-live-player] (https://github.com/131/h264-live-player)
+Reference [h264-live-player](https://github.com/131/h264-live-player)
 
 #### 2. HTML5播放原生H264内容（JS负责H264分割NALU） 
 H264Player 文件内的示例可以直接播放H264
 
-Reference [wfs] (https://github.com/ChihChengYang/wfs.js)
+Reference [wfs](https://github.com/ChihChengYang/wfs.js)
 
 优化： https://www.cnblogs.com/programmer-wfq/p/7281894.html
 
